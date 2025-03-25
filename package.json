@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/karlbernaldez/VOTE/issues"
   },
-  "homepage": "https://github.com/karlbernaldez/VOTE#readme"
+  "homepage": "https://github.com/karlbernaldez/VOTE#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
