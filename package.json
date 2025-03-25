@@ -1,0 +1,24 @@
+{
+  "name": "vote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\"",
+    "build": "echo \"No build yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karlbernaldez/VOTE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karlbernaldez/VOTE/issues"
+  },
+  "homepage": "https://github.com/karlbernaldez/VOTE#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
