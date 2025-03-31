@@ -1,41 +1,54 @@
-# Weather Forecasting Web App
+# DOST-MECO-TECO-VOTE III: Establishment of Seamless Prediction Capability on Typhoon, Marine Meteorology, and Short-Range Climate (PROJECT 1)
 
 ## 🌍 Overview
 This web application provides an interactive weather forecasting platform using **React** and **Mapbox**. It allows users to visualize weather data, overlay model outputs, and manually draw annotations for weather events such as storms or typhoons.
 
 ## 🚀 Features
-- **Interactive Map** (Mapbox integration)
-- **Weather Model Overlay** (Future implementation)
-- **User Annotations** (Draw on the map with customizable tools)
-- **Sidebar Navigation** (Access various tools & settings)
-- **Drawing Controls** (Start, Stop, and Clear drawings)
-- **Responsive UI** (Optimized for different screen sizes)
+- **🗺 Interactive Map** (Mapbox integration)
+- **📊 Weather Model Overlay** (Future implementation)
+- **✏️ User Annotations** (Draw on the map with customizable tools)
+- **🔄 Sidebar Navigation** (Access various tools & settings)
+- **✏️ Drawing Controls** (Start, Stop, and Clear drawings)
+- **🎨 Responsive UI** (Optimized for different screen sizes)
 
 ## 📂 Project Structure
 ```
-📦 project-root
+📦 wave-app
  ┣ 📂 public
- ┃ ┗ 📜 index.html
+ ┃ ┗ ⚡ pagasa-logo.png
  ┣ 📂 src
+ ┃ ┣ 📂 assets
+ ┃ ┃ ┣ 📜 BarChart.jsx
+ ┃ ┃ ┣ 📜 Global.jsx
+ ┃ ┃ ┣ 📜 InkBottle.jsx
  ┃ ┣ 📂 components
+ ┃ ┃ ┣ 📂 Sidebar
+ ┃ ┃ ┃ ┣ 📜 SidebarHeader.jsx
+ ┃ ┃ ┃ ┣ 📜 Switch.jsx
+ ┃ ┃ ┃ ┣ 📜 Typography.jsx
  ┃ ┃ ┣ 📜 Navbar.jsx
  ┃ ┃ ┣ 📜 Sidebar.jsx
- ┃ ┃ ┣ 📜 MapContainer.jsx
+ ┃ ┃ ┣ 📜 MapComponent.jsx
  ┃ ┃ ┗ 📜 DrawingOverlay.jsx
+ ┃ ┣ 📂 pages
+ ┃ ┃ ┗ 📜 Home.jsx
  ┃ ┣ 📂 styles
- ┃ ┃ ┗ 📜 styles.css
+ ┃ ┃ ┗ 📜 app.css
+ ┃ ┃ ┗ 📜 map.css
  ┃ ┣ 📜 App.jsx
  ┃ ┗ 📜 main.jsx
+ ┣ 📜 .env
  ┣ 📜 package.json
  ┣ 📜 README.md
  ┗ 📜 vite.config.js
+ ┣ 📜 tsconfig.json
 ```
 
 ## 🛠 Installation & Setup
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/your-username/weather-forecasting-app.git
-cd weather-forecasting-app
+git clone https://github.com/karlbernaldez/VOTE.git
+cd wave-app
 ```
 
 ### 2️⃣ Install Dependencies
@@ -73,7 +86,7 @@ npm run dev
 - [ ] Add export/save functionality for drawings
 
 ## 📜 License
-This project is licensed under the **MIT License**.
+This project is licensed under the **[Apache-2.0 license](https://github.com/karlbernaldez/VOTE?tab=Apache-2.0-1-ov-file)**.
 
 ## 🙌 Contributing
 Feel free to submit issues or pull requests to improve the app!
