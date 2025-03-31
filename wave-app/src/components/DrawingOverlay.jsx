@@ -6,14 +6,8 @@ const DrawingOverlay = () => {
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
 
-  const startDrawing = () => {
-    setIsDrawing(true);
-  };
-
-  const stopDrawing = () => {
-    setIsDrawing(false);
-  };
-
+  const startDrawing = () => setIsDrawing(true);
+  const stopDrawing = () => setIsDrawing(false);
   const clearDrawing = () => {
     if (canvasRef.current) {
       canvasRef.current.clearCanvas();
@@ -35,22 +29,17 @@ const DrawingOverlay = () => {
             top: 0,
             left: 0,
             zIndex: 10,
-            pointerEvents: "auto", // Allow drawing interactions
+            pointerEvents: "auto",
           }}
         />
       )}
       <div className="controls">
-        {!isDrawing ? (
-          <button onClick={startDrawing} title="Start Drawing">
-            <Pencil size={24} />
-          </button>
-        ) : (
-          <button onClick={stopDrawing} title="Stop Drawing">
-            <XCircle size={24} />
-          </button>
-        )}
+        <button onClick={isDrawing ? stopDrawing : startDrawing} title={isDrawing ? "Stop Drawing" : "Start Drawing"}>
+          {isDrawing ? <XCircle size={20} color="black" /> : <Pencil size={20} color="black" />}
+        </button>
+        <div className="separator"></div> {/* Separator Line */}
         <button onClick={clearDrawing} title="Clear All">
-          <Trash2 size={24} />
+          <Trash2 size={20} color="black" />
         </button>
       </div>
     </div>

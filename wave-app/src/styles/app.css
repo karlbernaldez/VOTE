@@ -44,41 +44,53 @@ html, body {
   height: 100vh;
 }
 
-/* Drawing overlay */
 .drawing-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Prevents it from blocking interactions */
+  width: 100vw;
+  height: 100vh;
   z-index: 10;
+  pointer-events: none; /* Makes sure the map is still interactive */
 }
 
-/* Ensure controls are clickable */
 .controls {
   position: fixed;
-  right: 20px;
-  top: 80px;
+  top: 50%;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transform: translateY(-50%);
+  z-index: 20;
   background: white;
-  padding: 10px;
-  border-radius: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 20; /* Keep it above overlay */
-  pointer-events: auto; /* Ensure it is clickable */
+  border-radius: 6px;
+  padding: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  pointer-events: auto;
 }
 
-button {
-  margin: 5px;
-  padding: 8px 12px;
-  font-size: 16px;
+.controls button {
   border: none;
+  background: white;
   cursor: pointer;
-  background: #007bff;
-  color: white;
-  border-radius: 20px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
 }
 
-button:hover {
-  background: #0056b3;
+.controls button:hover {
+  background: #f0f0f0;
+}
+
+/* Line Separator */
+.separator {
+  width: 80%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 2px auto;
 }
