@@ -20,5 +20,11 @@
   "homepage": "https://github.com/karlbernaldez/VOTE#readme",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "@arcgis/core": "^4.32.9",
+    "esri-loader": "^3.7.0",
+    "mapbox-gl": "^3.10.0",
+    "react-map-gl": "^8.0.1"
   }
 }
