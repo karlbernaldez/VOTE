@@ -20,7 +20,7 @@ const themes = {
 
 const CollapseButton = styled.button`
   position: absolute;
-  top: 9px;
+  top: 13px;
   left: ${({ collapsed }) => (collapsed ? "60px" : "230px")};
   background: ${({ themeMode }) =>
     themeMode === "dark" ? "#082440" : "#ffffff"};
