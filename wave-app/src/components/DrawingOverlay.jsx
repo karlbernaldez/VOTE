@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { ReactSketchCanvas } from "react-sketch-canvas";
-import { Pencil, XCircle, Trash2 } from "lucide-react";
+import { Pencil, XCircle, Trash2, Eraser } from "lucide-react";
 
 const DrawingOverlay = () => {
   const canvasRef = useRef(null);
@@ -21,8 +21,8 @@ const DrawingOverlay = () => {
           ref={canvasRef}
           strokeWidth={3}
           strokeColor="red"
-          canvasColor="transparent"
-          width="100vw"
+          canvasColor="rgba(0, 0, 0, 0)" // Changed canvas color
+          width="97.5%"
           height="100vh"
           style={{
             position: "absolute",
@@ -36,10 +36,6 @@ const DrawingOverlay = () => {
       <div className="controls">
         <button onClick={isDrawing ? stopDrawing : startDrawing} title={isDrawing ? "Stop Drawing" : "Start Drawing"}>
           {isDrawing ? <XCircle size={20} color="black" /> : <Pencil size={20} color="black" />}
-        </button>
-        <div className="separator"></div> {/* Separator Line */}
-        <button onClick={clearDrawing} title="Clear All">
-          <Trash2 size={20} color="black" />
         </button>
       </div>
     </div>

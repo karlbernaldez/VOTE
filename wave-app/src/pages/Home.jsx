@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
 import MapComponent from "../components/MapComponent";
+import LayerPanel from "../components/LayerPanel";
+import ToolsComponent from "../components/ToolsComponent"; // Import ToolsComponent
 import styled from "@emotion/styled";
-import DrawingOverlay from "../components/DrawingOverlay";
 
 const Container = styled.div`
   position: relative;
@@ -11,39 +11,48 @@ const Container = styled.div`
   display: flex;
 `;
 
-const StyledSidebar = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  height: 100vh;
-  width: ${({ collapsed }) => (collapsed ? "0" : "270px")}; /* Hide when collapsed */
-  transition: width 0.3s ease;
-  overflow: hidden; /* Prevent white space */
-`;
-
 const MapWrapper = styled.div`
   flex-grow: 1;
   width: ${({ collapsed }) => (collapsed ? "100vw" : "calc(100vw - 250px)")};
   height: 100vh;
   transition: width 0.3s ease;
+  position: relative;
+`;
+
+const ToolsWrapper = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
 `;
 
 const Home = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [layers, setLayers] = useState([
+    { id: "map-layer", name: "Map", visible: true, locked: true, isMap: true },
+  ]);
+
+  const handleLayerVisibilityChange = (id) => {
+    setLayers((prevLayers) =>
+      prevLayers.map((layer) =>
+        layer.id === id ? { ...layer, visible: !layer.visible } : layer
+      )
+    );
+  };
 
   return (
     <Container>
-      {/* Sidebar wrapper with proper hiding behavior */}
-      <StyledSidebar collapsed={collapsed}>
-        <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />
-      </StyledSidebar>
-
-      {/* Map container resizes dynamically */}
       <MapWrapper collapsed={collapsed}>
-        <MapComponent />
+        <ToolsWrapper>
+          <ToolsComponent /> {/* Add ToolsComponent inside the map wrapper */}
+        </ToolsWrapper>
+        <MapComponent visible={layers.find((l) => l.id === "map-layer")?.visible} />
       </MapWrapper>
-      <DrawingOverlay/>
+      <LayerPanel
+        layers={layers}
+        setLayers={setLayers}
+        onLayerVisibilityChange={handleLayerVisibilityChange}
+      />
     </Container>
   );
 };
